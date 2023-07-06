@@ -11,6 +11,7 @@ class BooksController < ApplicationController
     redirect_to books_path
   end
   def index
+    
   end
 
   def show
@@ -20,7 +21,7 @@ class BooksController < ApplicationController
   private
 
   def book_params
-    params.require(:book).permit(:shop_name, :image, :caption)
+    params.require(:book).permit(:title, :body)
   end
 
 end
