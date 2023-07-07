@@ -1,29 +1,29 @@
-<p id="notice">Welcome! You have signed up successfully.</p>
-<div class="col-md-3">
-      <h2>User info</h2>
-      <% if user.profile_image.attached? %>
-      <%= image_tag user.profile_image, size: "200x200" %>
-      <% else %>
-      <%= image_tag 'no_image', size: "200x200" %>
-      <% end %>
-      <table class="table">
-  <tbody><tr></tr>
-  <tr>
-	  <th>name</th>
-	  <th><%= user.name %></th>
-  </tr>
-  <tr>
-	  <th>introduction</th>
-	  <th></th>
-  </tr>
-</tbody></table>
+<h2>User info</h2>
+<% if user.profile_image.attached? %>
+  <%= image_tag user.profile_image, size: "200x200" %>
+<% else %>
+  <%= image_tag 'no_image', size: "200x200" %>
+<% end %>
+<table class="table">
+  <tbody>
+    <tr>
+	    <td>name</td>
+	    <td><%= user.name %></td>
+    </tr>
+    <tr>
+	    <td>introduction</td>
+	    <td>
+
+	  </tr>
+  </tbody>
+</table>
+
 <%= link_to edit_user_path(user.id), class: "btn btn-secondary btn-lg btn-block" do %>
   <i class="fas fa-user-cog"></i>
 <% end %>
-</div>
 
 <h1>New Book</h1>
-<%= form_with model: user, url: '/users', method: :post do |f| %>
+<%= form_with model: Book.new do |f| %>
   <h4>Title</h4>
   <%= f.text_field :title %>
   <h4>Opinion</h4>
