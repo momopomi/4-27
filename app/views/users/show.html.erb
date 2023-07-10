@@ -1,25 +1,25 @@
-<div class="container px-5 px-sm-0">
-  
-  <div class="row">
+<%= render 'users/user_info',user: @user %>
     
-    <div class="col-md-3">
-    <%= render 'users/user_info',user: current_user %>
-    </div>
-    
-    <div class="col-md-8 offset-md-1">  
-    <h2>Books</h2>
-    <table class="table table-hover table-inverse">
-    <thead>
-    <tr>
-    <th></th>
+<h2>Books</h2>
+<table>
+  <thead>
     <th>Title</th>
     <th>Opinion</th>
-    <th colspan="3"></th>
-    </tr>
-    </thead>
-    <tbody>
-    </tbody>
-    </table>
-    </div>
-  </div>  
-</div>
+    <th></th>
+  </thead>
+  
+  <tbody>
+    <% @books.each do |book| %>
+      <tr>
+        <td>
+          <%=link_to book.title,book_path(@%>
+        </td>
+        <td>
+          <%= book.body %>
+        </td>
+        <td>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
