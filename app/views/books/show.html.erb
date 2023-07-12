@@ -1,3 +1,7 @@
+<div>
+   <%= flash[:notice]%>
+</div>
+
 <div class="container px-5 px-sm-0">
   <dic class="row">
     <div class="col-md-3">
@@ -14,7 +18,7 @@
             <%= image_tag "no_image", size: "80x80" %>
             <% end %>
             <br>
-            <%= link_to @book.user.name ,user_path%>
+            <%= link_to @book.user.name ,user_path(@book.user.id) %>
           </th>
           <th>
             <%= link_to @book.title, book_path(@book.user.id) %>
